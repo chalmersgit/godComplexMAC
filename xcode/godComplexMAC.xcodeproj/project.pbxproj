@@ -1,0 +1,426 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 44;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0091D8F90E81B9330029341E /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0091D8F80E81B9330029341E /* OpenGL.framework */; };
+		0097E3E50F3E9819005A4392 /* QuickTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0097E3E40F3E9819005A4392 /* QuickTime.framework */; };
+		00B784B30FF439BC000DE1D7 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784AF0FF439BC000DE1D7 /* Accelerate.framework */; };
+		00B784B40FF439BC000DE1D7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B00FF439BC000DE1D7 /* AudioToolbox.framework */; };
+		00B784B50FF439BC000DE1D7 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B10FF439BC000DE1D7 /* AudioUnit.framework */; };
+		00B784B60FF439BC000DE1D7 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B20FF439BC000DE1D7 /* CoreAudio.framework */; };
+		00BAE65A0E7ED9C10018A608 /* godComplexMACApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 00BAE6590E7ED9C10018A608 /* godComplexMACApp.cpp */; };
+		00CCAF15116A9FEE008396D5 /* CinderApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = 00CCAF14116A9FEE008396D5 /* CinderApp.icns */; };
+		5323E6B20EAFCA74003A9687 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B10EAFCA74003A9687 /* CoreVideo.framework */; };
+		5323E6B60EAFCA7E003A9687 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B50EAFCA7E003A9687 /* QTKit.framework */; };
+		53E3CDFC0E86099300238D2B /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E3CDFB0E86099300238D2B /* Carbon.framework */; };
+		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		CD2DE83F1766DBED006044E7 /* CloudController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CD2DE8391766DBED006044E7 /* CloudController.cpp */; };
+		CD2DE8401766DBED006044E7 /* CloudParticle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CD2DE83A1766DBED006044E7 /* CloudParticle.cpp */; };
+		CD2DE8411766DBED006044E7 /* DirVector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CD2DE83B1766DBED006044E7 /* DirVector.cpp */; };
+		CD2DE8421766DBED006044E7 /* VectorFlowField.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CD2DE83C1766DBED006044E7 /* VectorFlowField.cpp */; };
+		CD2DE8431766DBED006044E7 /* VectorSet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CD2DE83D1766DBED006044E7 /* VectorSet.cpp */; };
+		CD2DE8441766DBED006044E7 /* WaterModule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CD2DE83E1766DBED006044E7 /* WaterModule.cpp */; };
+		CD2DE85D1766DDA6006044E7 /* gpgpu_frag.glsl in Resources */ = {isa = PBXBuildFile; fileRef = CD2DE8451766DC02006044E7 /* gpgpu_frag.glsl */; };
+		CD2DE85E1766DDA6006044E7 /* passThru_vert.glsl in Resources */ = {isa = PBXBuildFile; fileRef = CD2DE8461766DC02006044E7 /* passThru_vert.glsl */; };
+		CD2DE8601766DDA6006044E7 /* posShader.frag in Resources */ = {isa = PBXBuildFile; fileRef = CD2DE8481766DC02006044E7 /* posShader.frag */; };
+		CD2DE8611766DDA6006044E7 /* posShader.vert in Resources */ = {isa = PBXBuildFile; fileRef = CD2DE8491766DC02006044E7 /* posShader.vert */; };
+		CD2DE8621766DDA6006044E7 /* refraction_frag.glsl in Resources */ = {isa = PBXBuildFile; fileRef = CD2DE84A1766DC02006044E7 /* refraction_frag.glsl */; };
+		CD2DE8631766DDA6006044E7 /* texture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD2DE84B1766DC02006044E7 /* texture.jpg */; };
+		CD2DE8641766DDA6006044E7 /* texture1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD2DE84C1766DC02006044E7 /* texture1.jpg */; };
+		CD2DE8651766DDA6006044E7 /* texture2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD2DE84D1766DC02006044E7 /* texture2.jpg */; };
+		CD2DE8661766DDA6006044E7 /* texture3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD2DE84E1766DC02006044E7 /* texture3.jpg */; };
+		CD2DE8671766DDA6006044E7 /* texture4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD2DE84F1766DC02006044E7 /* texture4.jpg */; };
+		CD2DE8681766DDA6006044E7 /* texture5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD2DE8501766DC02006044E7 /* texture5.jpg */; };
+		CD2DE8691766DDA6006044E7 /* velShader.frag in Resources */ = {isa = PBXBuildFile; fileRef = CD2DE8511766DC02006044E7 /* velShader.frag */; };
+		CD2DE86A1766DDA6006044E7 /* velShader.vert in Resources */ = {isa = PBXBuildFile; fileRef = CD2DE8521766DC02006044E7 /* velShader.vert */; };
+		CD2DE86B1766DDA6006044E7 /* wellington_ALPHA.png in Resources */ = {isa = PBXBuildFile; fileRef = CD2DE8531766DC02006044E7 /* wellington_ALPHA.png */; };
+		CD2DE86C1766DDA6006044E7 /* wellington.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD2DE8541766DC02006044E7 /* wellington.jpg */; };
+		CD2DE86D1766DDA6006044E7 /* wellington01.obj in Resources */ = {isa = PBXBuildFile; fileRef = CD2DE8561766DC02006044E7 /* wellington01.obj */; };
+		CD2DE86F1766E1AB006044E7 /* point02.png in Resources */ = {isa = PBXBuildFile; fileRef = CD2DE86E1766E1AB006044E7 /* point02.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0091D8F80E81B9330029341E /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
+		0097E3E40F3E9819005A4392 /* QuickTime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickTime.framework; path = /System/Library/Frameworks/QuickTime.framework; sourceTree = "<absolute>"; };
+		00B784AF0FF439BC000DE1D7 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		00B784B00FF439BC000DE1D7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		00B784B10FF439BC000DE1D7 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
+		00B784B20FF439BC000DE1D7 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		00BAE6590E7ED9C10018A608 /* godComplexMACApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = godComplexMACApp.cpp; path = ../src/godComplexMACApp.cpp; sourceTree = SOURCE_ROOT; };
+		00CCAF14116A9FEE008396D5 /* CinderApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = CinderApp.icns; sourceTree = SOURCE_ROOT; };
+		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		32CA4F630368D1EE00C91783 /* godComplexMAC_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = godComplexMAC_Prefix.pch; sourceTree = "<group>"; };
+		5323E6B10EAFCA74003A9687 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = /System/Library/Frameworks/CoreVideo.framework; sourceTree = "<absolute>"; };
+		5323E6B50EAFCA7E003A9687 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = /System/Library/Frameworks/QTKit.framework; sourceTree = "<absolute>"; };
+		53E3CDFB0E86099300238D2B /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
+		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D1107320486CEB800E47090 /* godComplexMAC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = godComplexMAC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD2DE8391766DBED006044E7 /* CloudController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CloudController.cpp; path = ../src/CloudController.cpp; sourceTree = "<group>"; };
+		CD2DE83A1766DBED006044E7 /* CloudParticle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CloudParticle.cpp; path = ../src/CloudParticle.cpp; sourceTree = "<group>"; };
+		CD2DE83B1766DBED006044E7 /* DirVector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DirVector.cpp; path = ../src/DirVector.cpp; sourceTree = "<group>"; };
+		CD2DE83C1766DBED006044E7 /* VectorFlowField.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VectorFlowField.cpp; path = ../src/VectorFlowField.cpp; sourceTree = "<group>"; };
+		CD2DE83D1766DBED006044E7 /* VectorSet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VectorSet.cpp; path = ../src/VectorSet.cpp; sourceTree = "<group>"; };
+		CD2DE83E1766DBED006044E7 /* WaterModule.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WaterModule.cpp; path = ../src/WaterModule.cpp; sourceTree = "<group>"; };
+		CD2DE8451766DC02006044E7 /* gpgpu_frag.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; name = gpgpu_frag.glsl; path = ../resources/gpgpu_frag.glsl; sourceTree = "<group>"; };
+		CD2DE8461766DC02006044E7 /* passThru_vert.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; name = passThru_vert.glsl; path = ../resources/passThru_vert.glsl; sourceTree = "<group>"; };
+		CD2DE8481766DC02006044E7 /* posShader.frag */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = posShader.frag; path = ../resources/posShader.frag; sourceTree = "<group>"; };
+		CD2DE8491766DC02006044E7 /* posShader.vert */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = posShader.vert; path = ../resources/posShader.vert; sourceTree = "<group>"; };
+		CD2DE84A1766DC02006044E7 /* refraction_frag.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; name = refraction_frag.glsl; path = ../resources/refraction_frag.glsl; sourceTree = "<group>"; };
+		CD2DE84B1766DC02006044E7 /* texture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = texture.jpg; path = ../resources/texture.jpg; sourceTree = "<group>"; };
+		CD2DE84C1766DC02006044E7 /* texture1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = texture1.jpg; path = ../resources/texture1.jpg; sourceTree = "<group>"; };
+		CD2DE84D1766DC02006044E7 /* texture2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = texture2.jpg; path = ../resources/texture2.jpg; sourceTree = "<group>"; };
+		CD2DE84E1766DC02006044E7 /* texture3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = texture3.jpg; path = ../resources/texture3.jpg; sourceTree = "<group>"; };
+		CD2DE84F1766DC02006044E7 /* texture4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = texture4.jpg; path = ../resources/texture4.jpg; sourceTree = "<group>"; };
+		CD2DE8501766DC02006044E7 /* texture5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = texture5.jpg; path = ../resources/texture5.jpg; sourceTree = "<group>"; };
+		CD2DE8511766DC02006044E7 /* velShader.frag */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = velShader.frag; path = ../resources/velShader.frag; sourceTree = "<group>"; };
+		CD2DE8521766DC02006044E7 /* velShader.vert */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = velShader.vert; path = ../resources/velShader.vert; sourceTree = "<group>"; };
+		CD2DE8531766DC02006044E7 /* wellington_ALPHA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wellington_ALPHA.png; path = ../resources/wellington_ALPHA.png; sourceTree = "<group>"; };
+		CD2DE8541766DC02006044E7 /* wellington.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = wellington.jpg; path = ../resources/wellington.jpg; sourceTree = "<group>"; };
+		CD2DE8551766DC02006044E7 /* wellington.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = wellington.psd; path = ../resources/wellington.psd; sourceTree = "<group>"; };
+		CD2DE8561766DC02006044E7 /* wellington01.obj */ = {isa = PBXFileReference; lastKnownFileType = text; name = wellington01.obj; path = ../resources/wellington01.obj; sourceTree = "<group>"; };
+		CD2DE8571766DC13006044E7 /* CloudController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CloudController.h; path = ../include/CloudController.h; sourceTree = "<group>"; };
+		CD2DE8581766DC13006044E7 /* CloudParticle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CloudParticle.h; path = ../include/CloudParticle.h; sourceTree = "<group>"; };
+		CD2DE8591766DC13006044E7 /* DirVector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DirVector.h; path = ../include/DirVector.h; sourceTree = "<group>"; };
+		CD2DE85A1766DC13006044E7 /* VectorFlowField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VectorFlowField.h; path = ../include/VectorFlowField.h; sourceTree = "<group>"; };
+		CD2DE85B1766DC13006044E7 /* VectorSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VectorSet.h; path = ../include/VectorSet.h; sourceTree = "<group>"; };
+		CD2DE85C1766DC13006044E7 /* WaterModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WaterModule.h; path = ../include/WaterModule.h; sourceTree = "<group>"; };
+		CD2DE86E1766E1AB006044E7 /* point02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = point02.png; path = ../resources/point02.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D11072E0486CEB800E47090 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				0091D8F90E81B9330029341E /* OpenGL.framework in Frameworks */,
+				53E3CDFC0E86099300238D2B /* Carbon.framework in Frameworks */,
+				5323E6B20EAFCA74003A9687 /* CoreVideo.framework in Frameworks */,
+				5323E6B60EAFCA7E003A9687 /* QTKit.framework in Frameworks */,
+				0097E3E50F3E9819005A4392 /* QuickTime.framework in Frameworks */,
+				00B784B30FF439BC000DE1D7 /* Accelerate.framework in Frameworks */,
+				00B784B40FF439BC000DE1D7 /* AudioToolbox.framework in Frameworks */,
+				00B784B50FF439BC000DE1D7 /* AudioUnit.framework in Frameworks */,
+				00B784B60FF439BC000DE1D7 /* CoreAudio.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				CD2DE8391766DBED006044E7 /* CloudController.cpp */,
+				CD2DE83A1766DBED006044E7 /* CloudParticle.cpp */,
+				CD2DE83B1766DBED006044E7 /* DirVector.cpp */,
+				CD2DE83C1766DBED006044E7 /* VectorFlowField.cpp */,
+				CD2DE83D1766DBED006044E7 /* VectorSet.cpp */,
+				CD2DE83E1766DBED006044E7 /* WaterModule.cpp */,
+				00BAE6590E7ED9C10018A608 /* godComplexMACApp.cpp */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				00B784AF0FF439BC000DE1D7 /* Accelerate.framework */,
+				00B784B00FF439BC000DE1D7 /* AudioToolbox.framework */,
+				00B784B10FF439BC000DE1D7 /* AudioUnit.framework */,
+				00B784B20FF439BC000DE1D7 /* CoreAudio.framework */,
+				0097E3E40F3E9819005A4392 /* QuickTime.framework */,
+				5323E6B50EAFCA7E003A9687 /* QTKit.framework */,
+				5323E6B10EAFCA74003A9687 /* CoreVideo.framework */,
+				53E3CDFB0E86099300238D2B /* Carbon.framework */,
+				0091D8F80E81B9330029341E /* OpenGL.framework */,
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
+				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
+				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D1107320486CEB800E47090 /* godComplexMAC.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* godComplexMAC */ = {
+			isa = PBXGroup;
+			children = (
+				29B97315FDCFA39411CA2CEA /* Headers */,
+				080E96DDFE201D6D7F000001 /* Source */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = godComplexMAC;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				CD2DE8571766DC13006044E7 /* CloudController.h */,
+				CD2DE8581766DC13006044E7 /* CloudParticle.h */,
+				CD2DE8591766DC13006044E7 /* DirVector.h */,
+				CD2DE85A1766DC13006044E7 /* VectorFlowField.h */,
+				CD2DE85B1766DC13006044E7 /* VectorSet.h */,
+				CD2DE85C1766DC13006044E7 /* WaterModule.h */,
+				32CA4F630368D1EE00C91783 /* godComplexMAC_Prefix.pch */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CD2DE86E1766E1AB006044E7 /* point02.png */,
+				CD2DE8451766DC02006044E7 /* gpgpu_frag.glsl */,
+				CD2DE8461766DC02006044E7 /* passThru_vert.glsl */,
+				CD2DE8481766DC02006044E7 /* posShader.frag */,
+				CD2DE8491766DC02006044E7 /* posShader.vert */,
+				CD2DE84A1766DC02006044E7 /* refraction_frag.glsl */,
+				CD2DE84B1766DC02006044E7 /* texture.jpg */,
+				CD2DE84C1766DC02006044E7 /* texture1.jpg */,
+				CD2DE84D1766DC02006044E7 /* texture2.jpg */,
+				CD2DE84E1766DC02006044E7 /* texture3.jpg */,
+				CD2DE84F1766DC02006044E7 /* texture4.jpg */,
+				CD2DE8501766DC02006044E7 /* texture5.jpg */,
+				CD2DE8511766DC02006044E7 /* velShader.frag */,
+				CD2DE8521766DC02006044E7 /* velShader.vert */,
+				CD2DE8531766DC02006044E7 /* wellington_ALPHA.png */,
+				CD2DE8541766DC02006044E7 /* wellington.jpg */,
+				CD2DE8551766DC02006044E7 /* wellington.psd */,
+				CD2DE8561766DC02006044E7 /* wellington01.obj */,
+				8D1107310486CEB800E47090 /* Info.plist */,
+				00CCAF14116A9FEE008396D5 /* CinderApp.icns */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D1107260486CEB800E47090 /* godComplexMAC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "godComplexMAC" */;
+			buildPhases = (
+				8D1107290486CEB800E47090 /* Resources */,
+				8D11072C0486CEB800E47090 /* Sources */,
+				8D11072E0486CEB800E47090 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = godComplexMAC;
+			productInstallPath = "$(HOME)/Applications";
+			productName = godComplexMAC;
+			productReference = 8D1107320486CEB800E47090 /* godComplexMAC.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "godComplexMAC" */;
+			compatibilityVersion = "Xcode 3.0";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* godComplexMAC */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D1107260486CEB800E47090 /* godComplexMAC */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D1107290486CEB800E47090 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD2DE85D1766DDA6006044E7 /* gpgpu_frag.glsl in Resources */,
+				CD2DE85E1766DDA6006044E7 /* passThru_vert.glsl in Resources */,
+				CD2DE8601766DDA6006044E7 /* posShader.frag in Resources */,
+				CD2DE8611766DDA6006044E7 /* posShader.vert in Resources */,
+				CD2DE8621766DDA6006044E7 /* refraction_frag.glsl in Resources */,
+				CD2DE8631766DDA6006044E7 /* texture.jpg in Resources */,
+				CD2DE8641766DDA6006044E7 /* texture1.jpg in Resources */,
+				CD2DE8651766DDA6006044E7 /* texture2.jpg in Resources */,
+				CD2DE8661766DDA6006044E7 /* texture3.jpg in Resources */,
+				CD2DE8671766DDA6006044E7 /* texture4.jpg in Resources */,
+				CD2DE8681766DDA6006044E7 /* texture5.jpg in Resources */,
+				CD2DE8691766DDA6006044E7 /* velShader.frag in Resources */,
+				CD2DE86A1766DDA6006044E7 /* velShader.vert in Resources */,
+				CD2DE86B1766DDA6006044E7 /* wellington_ALPHA.png in Resources */,
+				CD2DE86C1766DDA6006044E7 /* wellington.jpg in Resources */,
+				CD2DE86D1766DDA6006044E7 /* wellington01.obj in Resources */,
+				00CCAF15116A9FEE008396D5 /* CinderApp.icns in Resources */,
+				CD2DE86F1766E1AB006044E7 /* point02.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D11072C0486CEB800E47090 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00BAE65A0E7ED9C10018A608 /* godComplexMACApp.cpp in Sources */,
+				CD2DE83F1766DBED006044E7 /* CloudController.cpp in Sources */,
+				CD2DE8401766DBED006044E7 /* CloudParticle.cpp in Sources */,
+				CD2DE8411766DBED006044E7 /* DirVector.cpp in Sources */,
+				CD2DE8421766DBED006044E7 /* VectorFlowField.cpp in Sources */,
+				CD2DE8431766DBED006044E7 /* VectorSet.cpp in Sources */,
+				CD2DE8441766DBED006044E7 /* WaterModule.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		C01FCF4B08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = godComplexMAC_Prefix.pch;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"\"$(CINDER_PATH)/lib/libcinder_d.a\"",
+					"-lcurl",
+				);
+				PRODUCT_NAME = godComplexMAC;
+				SDKROOT = macosx;
+				SYMROOT = ./build;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C01FCF4C08A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_FAST_MATH = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = godComplexMAC_Prefix.pch;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"\"$(CINDER_PATH)/lib/libcinder.a\"",
+					"-lcurl",
+				);
+				PRODUCT_NAME = godComplexMAC;
+				SDKROOT = macosx;
+				STRIP_INSTALLED_PRODUCT = YES;
+				SYMROOT = ./build;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = i386;
+				CINDER_PATH = ../../../../cinder_0.8.4_mac;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/boost\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				PREBINDING = NO;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
+				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" ../include";
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = i386;
+				CINDER_PATH = ../../../../cinder_0.8.4_mac;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/boost\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				PREBINDING = NO;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
+				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" ../include";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "godComplexMAC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4B08A954540054247B /* Debug */,
+				C01FCF4C08A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "godComplexMAC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

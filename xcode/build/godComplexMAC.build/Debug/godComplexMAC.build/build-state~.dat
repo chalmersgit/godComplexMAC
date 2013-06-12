@@ -1,0 +1,197 @@
+TgodComplexMAC
+v5
+r1
+cCheck dependencies
+cProcessInfoPlistFile "/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/./build/Debug/godComplexMAC.app/Contents/Info.plist" Info.plist
+cCpResource CinderApp.icns ./build/Debug/godComplexMAC.app/Contents/Resources/CinderApp.icns
+cProcessPCH++ /var/folders/94/yg656cpx109_1bvgkr825pym0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/godComplexMAC_Prefix-cbfjhbzwvykalecxlhxeekjgpnhn/godComplexMAC_Prefix.pch.pth godComplexMAC_Prefix.pch normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC ./build/godComplexMAC.build/Debug/godComplexMAC.build/Objects-normal/i386/godComplexMACApp.o "/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/../src/godComplexMACApp.cpp" normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cLd "/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/./build/Debug/godComplexMAC.app/Contents/MacOS/godComplexMAC" normal i386
+cTouch "/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/./build/Debug/godComplexMAC.app"
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk
+c0000000051B0ED1B00000000000000AA
+t1370549531
+s170
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/Accelerate.framework/Accelerate
+c0000000050957D6300000000000024F0
+t1351974243
+s9456
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/AudioToolbox.framework/AudioToolbox
+c00000000514AB2970000000000024DD8
+t1363849879
+s151000
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/AudioUnit.framework/AudioUnit
+c00000000514AB29700000000000060B4
+t1363849879
+s24756
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/Cocoa.framework/Headers/Cocoa.h
+c0000000050957D6300000000000001E5
+t1351974243
+s485
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/CoreAudio.framework/CoreAudio
+c00000000514AB298000000000000E9A8
+t1363849880
+s59816
+
+N/System/Library/Frameworks/Carbon.framework/Carbon
+c000000005095536000000000000069F0
+t1351963488
+s27120
+
+N/System/Library/Frameworks/Cocoa.framework/Cocoa
+c00000000509553600000000000006730
+t1351963488
+s26416
+
+N/System/Library/Frameworks/CoreVideo.framework/CoreVideo
+c00000000513E75090000000000081CB0
+t1363047689
+s531632
+
+N/System/Library/Frameworks/OpenGL.framework/OpenGL
+c0000000051B1027B000000000002DAD0
+t1370555003
+s187088
+
+N/System/Library/Frameworks/QTKit.framework/QTKit
+c00000000519F44BC00000000004A2E10
+t1369392316
+s4861456
+
+N/System/Library/Frameworks/QuickTime.framework/QuickTime
+c00000000519F448C0000000000322E20
+t1369392268
+s3288608
+
+N/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/../src/godComplexMACApp.cpp
+c0000000051B6A3230000000000000227
+t1370923811
+s551
+
+N/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/./build/Debug/godComplexMAC.app
+t2
+s0
+
+N/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/./build/Debug/godComplexMAC.app/Contents/Info.plist
+t2
+s0
+
+N/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/./build/Debug/godComplexMAC.app/Contents/MacOS/godComplexMAC
+t2
+s0
+
+N/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/./build/Debug/godComplexMAC.app/Contents/PkgInfo
+t2
+s0
+
+N/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/./build/Debug/godComplexMAC.app/Contents/Resources/CinderApp.icns
+t2
+s0
+
+N/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/./build/godComplexMAC.build/Debug/godComplexMAC.build/Objects-normal/i386/godComplexMAC.LinkFileList
+c0000000051B6A3DB00000000000000A7
+t1370923995
+s167
+
+N/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/./build/godComplexMAC.build/Debug/godComplexMAC.build/Objects-normal/i386/godComplexMACApp.o
+t2
+s0
+
+N/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/CinderApp.icns
+c0000000051B6A323000000000001BEB5
+t1370923811
+s114357
+
+N/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/godComplexMAC_Prefix.pch
+c0000000051B6A3230000000000000093
+t1370923811
+s147
+i<Cocoa/Cocoa.h>
+
+N/var/folders/94/yg656cpx109_1bvgkr825pym0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/godComplexMAC_Prefix-cbfjhbzwvykalecxlhxeekjgpnhn/godComplexMAC_Prefix.pch.pth
+t2
+s0
+
+NInfo.plist
+c0000000051B6A3230000000000000353
+t1370923811
+s851
+
+CBuild AST from "/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/../src/godComplexMACApp.cpp"
+r0
+
+CCheck dependencies
+r0
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependenciesf985475bdb66b741^ff784f5bdb66b741^---0#1#0#--18"Check dependencies36"235E7221-E2B0-4B18-9500-456ACBAB720A-
+
+CCompileC ./build/godComplexMAC.build/Debug/godComplexMAC.build/Objects-normal/i386/godComplexMACApp.o "/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/../src/godComplexMACApp.cpp" normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s392616795.490869
+e392616797.753115
+r1
+xCompileC
+x./build/godComplexMAC.build/Debug/godComplexMAC.build/Objects-normal/i386/godComplexMACApp.o
+x/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/../src/godComplexMACApp.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection109"Compile /Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/../src/godComplexMACApp.cpp30f37d5bdb66b741^47ccc05ddb66b741^---0#0#0#-19%DVTDocumentLocation2@119"file://localhost/Users/oliverellmers/Desktop/Cinder%20Projects/Projects/godComplexMAC/xcode/../src/godComplexMACApp.cpp0000000000000000^3353"CompileC ./build/godComplexMAC.build/Debug/godComplexMAC.build/Objects-normal/i386/godComplexMACApp.o ../src/godComplexMACApp.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd "/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode"    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch i386 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.5 -g -Wno-sign-conversion -iquote "/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/./build/godComplexMAC.build/Debug/godComplexMAC.build/godComplexMAC-generated-files.hmap" "-I/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/./build/godComplexMAC.build/Debug/godComplexMAC.build/godComplexMAC-own-target-headers.hmap" "-I/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/./build/godComplexMAC.build/Debug/godComplexMAC.build/godComplexMAC-all-target-headers.hmap" -iquote "/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/./build/godComplexMAC.build/Debug/godComplexMAC.build/godComplexMAC-project-headers.hmap" -iquote../../../../cinder_0.8.4_mac/include -iquote../include "-I/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/build/Debug/include" -I../../../../cinder_0.8.4_mac/boost "-I/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/./build/godComplexMAC.build/Debug/godComplexMAC.build/DerivedSources/i386" "-I/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/./build/godComplexMAC.build/Debug/godComplexMAC.build/DerivedSources" "-F/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/build/Debug" -include /var/folders/94/yg656cpx109_1bvgkr825pym0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/godComplexMAC_Prefix-cbfjhbzwvykalecxlhxeekjgpnhn/godComplexMAC_Prefix.pch -MMD -MT dependencies -MF "/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/./build/godComplexMAC.build/Debug/godComplexMAC.build/Objects-normal/i386/godComplexMACApp.d" --serialize-diagnostics "/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/./build/godComplexMAC.build/Debug/godComplexMAC.build/Objects-normal/i386/godComplexMACApp.dia" -c "/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/../src/godComplexMACApp.cpp" -o "/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/./build/godComplexMAC.build/Debug/godComplexMAC.build/Objects-normal/i386/godComplexMACApp.o"36"EA036086-F4D0-4A70-8FE6-DD93D07DF8AD-
+
+CCpResource CinderApp.icns ./build/Debug/godComplexMAC.app/Contents/Resources/CinderApp.icns
+s392616795.337897
+e392616795.340453
+r1
+xCpResource
+xCinderApp.icns
+x./build/Debug/godComplexMAC.app/Contents/Resources/CinderApp.icns
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection70"Copy ./build/Debug/godComplexMAC.app/Contents/Resources/CinderApp.icnsc097565bdb66b741^e126575bdb66b741^---0#0#0#-19%DVTDocumentLocation2@157"file://localhost/Users/oliverellmers/Desktop/Cinder%20Projects/Projects/godComplexMAC/xcode/./build/Debug/godComplexMAC.app/Contents/Resources/CinderApp.icns000000000080d041^505"CpResource CinderApp.icns ./build/Debug/godComplexMAC.app/Contents/Resources/CinderApp.icns    cd "/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks "/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/CinderApp.icns" "/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/./build/Debug/godComplexMAC.app/Contents/Resources"36"B93E00DA-B3EC-45AC-A0D0-9E4FFDB39564-
+
+CLd "/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/./build/Debug/godComplexMAC.app/Contents/MacOS/godComplexMAC" normal i386
+s392616797.759923
+e392616800.974614
+r1
+xLd
+x/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/./build/Debug/godComplexMAC.app/Contents/MacOS/godComplexMAC
+xnormal
+xi386
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection139"Link /Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/./build/Debug/godComplexMAC.app/Contents/MacOS/godComplexMACd89dc25ddb66b741^b77ff960db66b741^---0#0#0#--1206"Ld ./build/Debug/godComplexMAC.app/Contents/MacOS/godComplexMAC normal i386    cd "/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode"    setenv MACOSX_DEPLOYMENT_TARGET 10.5    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -arch i386 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk "-L/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/build/Debug" "-F/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/build/Debug" -filelist "/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/./build/godComplexMAC.build/Debug/godComplexMAC.build/Objects-normal/i386/godComplexMAC.LinkFileList" -mmacosx-version-min=10.5 ../../../../cinder_0.8.4_mac/lib/libcinder_d.a -lcurl -framework Cocoa -framework OpenGL -framework Carbon -framework CoreVideo -framework QTKit -framework QuickTime -framework Accelerate -framework AudioToolbox -framework AudioUnit -framework CoreAudio -o "/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/./build/Debug/godComplexMAC.app/Contents/MacOS/godComplexMAC"36"7EA29184-C47C-4452-9073-05953F1257B8-
+
+CProcessInfoPlistFile "/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/./build/Debug/godComplexMAC.app/Contents/Info.plist" Info.plist
+s392616795.319047
+e392616795.330012
+r1
+xProcessInfoPlistFile
+x/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/./build/Debug/godComplexMAC.app/Contents/Info.plist
+xInfo.plist
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Process Info.plist11e3515bdb66b741^8fc3545bdb66b741^---0#0#0#-19%DVTDocumentLocation2@102"file://localhost/Users/oliverellmers/Desktop/Cinder%20Projects/Projects/godComplexMAC/xcode/Info.plist0000000000000000^513"ProcessInfoPlistFile ./build/Debug/godComplexMAC.app/Contents/Info.plist Info.plist    cd "/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode"    builtin-infoPlistUtility Info.plist -genpkginfo "/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/./build/Debug/godComplexMAC.app/Contents/PkgInfo" -expandbuildsettings -platform macosx -o "/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/./build/Debug/godComplexMAC.app/Contents/Info.plist"36"3789EB5A-4F1A-4225-A705-5684AAEDA8B4-
+
+CProcessPCH++ /Users/oliverellmers/Library/Developer/Xcode/DerivedData/godComplexMAC-eorxqdpmufpjfjahrikxmraubopa/Index/PrecompiledHeaders/godComplexMAC_Prefix-dojvsckawohjbgchftetaizghjyd_ast/godComplexMAC_Prefix.pch.pth godComplexMAC_Prefix.pch normal i386 c++ com.apple.compilers.llvm.clang.1_0.astbuilder
+r0
+
+CProcessPCH++ /var/folders/94/yg656cpx109_1bvgkr825pym0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/godComplexMAC_Prefix-cbfjhbzwvykalecxlhxeekjgpnhn/godComplexMAC_Prefix.pch.pth godComplexMAC_Prefix.pch normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s392616795.348596
+e392616795.483943
+r1
+xProcessPCH++
+x/var/folders/94/yg656cpx109_1bvgkr825pym0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/godComplexMAC_Prefix-cbfjhbzwvykalecxlhxeekjgpnhn/godComplexMAC_Prefix.pch.pth
+xgodComplexMAC_Prefix.pch
+xnormal
+xi386
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection35"Precompile godComplexMAC_Prefix.pch3b71595bdb66b741^3fe27b5bdb66b741^---0#0#0#-19%DVTDocumentLocation2@116"file://localhost/Users/oliverellmers/Desktop/Cinder%20Projects/Projects/godComplexMAC/xcode/godComplexMAC_Prefix.pch0000000000000000^3268"ProcessPCH++ /var/folders/94/yg656cpx109_1bvgkr825pym0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/godComplexMAC_Prefix-cbfjhbzwvykalecxlhxeekjgpnhn/godComplexMAC_Prefix.pch.pth godComplexMAC_Prefix.pch normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd "/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode"    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++-header -arch i386 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.5 -g -Wno-sign-conversion -iquote "/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/./build/godComplexMAC.build/Debug/godComplexMAC.build/godComplexMAC-generated-files.hmap" "-I/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/./build/godComplexMAC.build/Debug/godComplexMAC.build/godComplexMAC-own-target-headers.hmap" "-I/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/./build/godComplexMAC.build/Debug/godComplexMAC.build/godComplexMAC-all-target-headers.hmap" -iquote "/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/./build/godComplexMAC.build/Debug/godComplexMAC.build/godComplexMAC-project-headers.hmap" -iquote../../../../cinder_0.8.4_mac/include -iquote../include "-I/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/build/Debug/include" -I../../../../cinder_0.8.4_mac/boost "-I/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/./build/godComplexMAC.build/Debug/godComplexMAC.build/DerivedSources/i386" "-I/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/./build/godComplexMAC.build/Debug/godComplexMAC.build/DerivedSources" "-F/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/build/Debug" --serialize-diagnostics /var/folders/94/yg656cpx109_1bvgkr825pym0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/godComplexMAC_Prefix-cbfjhbzwvykalecxlhxeekjgpnhn/godComplexMAC_Prefix.pch.dia -c "/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/godComplexMAC_Prefix.pch" -o /var/folders/94/yg656cpx109_1bvgkr825pym0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/godComplexMAC_Prefix-cbfjhbzwvykalecxlhxeekjgpnhn/godComplexMAC_Prefix.pch.pth -MMD -MT dependencies -MF /var/folders/94/yg656cpx109_1bvgkr825pym0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/godComplexMAC_Prefix-cbfjhbzwvykalecxlhxeekjgpnhn/godComplexMAC_Prefix.pch.d36"943525FA-6327-4EFB-BB80-6A158DA51386-
+
+CTouch "/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/./build/Debug/godComplexMAC.app"
+s392616800.982637
+e392616801.221084
+r1
+xTouch
+x/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/./build/Debug/godComplexMAC.app
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection111"Touch /Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/./build/Debug/godComplexMAC.appbf9afb60db66b741^5f983861db66b741^---0#0#0#--251"Touch ./build/Debug/godComplexMAC.app    cd "/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode"    /usr/bin/touch -c "/Users/oliverellmers/Desktop/Cinder Projects/Projects/godComplexMAC/xcode/./build/Debug/godComplexMAC.app"36"E1AAC4D5-E5C5-47D1-8743-DB56E9DF6FAC-
+

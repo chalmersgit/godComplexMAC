@@ -28,6 +28,7 @@ public:
 	float indexMin;
 	float indexMax;
     
+    ci::Vec2f prevmLoc;
 	ci::Vec2f mLoc;
 	ci::Vec2f mVel;
 	ci::Vec2f mAcc;

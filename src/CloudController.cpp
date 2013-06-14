@@ -17,6 +17,7 @@ CloudController::CloudController(){
 
 
 CloudController::CloudController(Vec2f loc, float ms, float mf, VectorSet* pc){
+    prevmLoc = loc;
 	mLoc = loc;
 	mMaxForce = mf;
 	mMaxSpeed = ms;
@@ -55,6 +56,8 @@ void CloudController::update(){
     
 	//console() << "3 " << mLoc << ", " << mVel << ", " << mAcc << endl;
     
+    prevmLoc = mLoc;
+    
 	mLoc += mVel;
     
 	//?
@@ -70,7 +73,7 @@ void CloudController::update(){
 }
 
 void CloudController::draw(){
-    
+/*
 	//console() << mCol << endl;
 	glPushMatrix();
     
@@ -89,7 +92,7 @@ void CloudController::draw(){
 	
     
 	
-	/*if(mCloudParticle !=NULL){
+	if(mCloudParticle !=NULL){
      //console() << mCol << endl;
      glPushMatrix();
      mCloudParticle->draw();

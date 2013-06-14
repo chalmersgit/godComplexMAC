@@ -20,14 +20,8 @@ uniform vec2 finger3;
 uniform vec2 finger4;
 uniform vec2 finger5;
 
-/*
 uniform int maxControllers;
-uniform vec2[16] controllers;
-uniform float[16] controllerMinIndices;
-uniform float[16] controllerMaxIndices;
-*/
-
-uniform int maxControllers;
+uniform vec2 prevControllers[16];
 uniform vec2 controllers[16];
 uniform float controllerMinIndices[16];
 uniform float controllerMaxIndices[16];
@@ -130,12 +124,21 @@ void main(){
 			//float amtx = origPos.x;
 			//float amty = origPos.y;
 			
-			amt *= 0.5;//cloud size
+			amt *= 0.5;          //NOTE: cloud size
 			//amty *= 0.5;
 			
 			pos.x =  cos(theta)*(-amt)*2.0 + controllers[i].x;
 			pos.y =  -sin(theta)*(-amt)*2.0 + controllers[i].y;
 			
+            vec2 controllerDir = controllers[i] - prevControllers[i];
+            vec2 particleFromCenter = pos.xy - controllers[i];
+            float forceScaler = dot(controllerDir, particleFromCenter);
+            forceScaler = (forceScaler + 1.0) / 2.0;
+            
+            forceScaler = 1.0 - forceScaler;
+            forceScaler *= 10.0;
+            vel.xy += (-controllerDir) * forceScaler;
+            
 			//pos.x =  cos(theta) + controllers[i].x;
 			//pos.y =  - sin(theta) + controllers[i].y;
 			

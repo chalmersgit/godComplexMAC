@@ -20,6 +20,14 @@ CloudParticle::CloudParticle()
 CloudParticle::CloudParticle(vector<CloudController*>* cc){
 	mCloudControllers = cc;
 	setup();
+    particleTexRes = Vec2f(PARTICLES_X, PARTICLES_Y);
+    
+    //need a timer to kill things
+	int activeControllersCount;
+    Vec2f prevControllers[16];
+	Vec2f controllers[16];
+	float minIndices[16];
+	float maxIndices[16];
 }
 
 void CloudParticle::initFBO()
@@ -77,6 +85,7 @@ void CloudParticle::initFBO()
 
 void CloudParticle::setup()
 {
+    activeControllersCount = 5;
 	gl::clear();
 	
 	try {
@@ -257,6 +266,18 @@ void CloudParticle::setPos(Vec2f loc)
 }
 
 
+void CloudParticle::updateGPUcloudControllers(){
+    int i = 0;
+	while(i < activeControllersCount){
+        prevControllers[i] = (*mCloudControllers)[i]->prevmLoc / particleTexRes;
+		controllers[i] = (*mCloudControllers)[i]->mLoc / particleTexRes;
+		minIndices[i] = (*mCloudControllers)[i]->indexMin;
+		maxIndices[i] = (*mCloudControllers)[i]->indexMax;
+		//console() << "Val " << i << ": " << (*mCloudControllers)[i]->mLoc << " - " << (*mCloudControllers)[i]->indexMin << ", " << (*mCloudControllers)[i]->indexMax << endl;
+		i++;
+	}
+}
+
 /*
  all calculations are done in update
  */
@@ -290,35 +311,20 @@ void CloudParticle::update()
 	mVelShader.uniform("oPositions",4);
 	mVelShader.uniform("noiseTex", mNoise);
 	
-	//for(int i = 0; i <  mCloudControllers->size(); i++){
-	//normalise controllers
-	Vec2f res(PARTICLES_X, PARTICLES_Y);
-	//need a timer to kill things
-	int activeControllersCount = 5;
-	//Dynamic, using arrays
-	int i = 0;
-	Vec2f controllers[16];
-	float minIndices[16];
-	float maxIndices[16];
-	while(i < activeControllersCount){
-		controllers[i] = (*mCloudControllers)[i]->mLoc / res;
-		minIndices[i] = (*mCloudControllers)[i]->indexMin;
-		maxIndices[i] = (*mCloudControllers)[i]->indexMax;
-		//console() << "Val " << i << ": " << (*mCloudControllers)[i]->mLoc << " - " << (*mCloudControllers)[i]->indexMin << ", " << (*mCloudControllers)[i]->indexMax << endl;
-		i++;
-	}
     
-	mVelShader.uniform("maxControllers", i);
+    //Update vel shader
+	mVelShader.uniform("maxControllers", activeControllersCount);
+    mVelShader.uniform("prevControllers", prevControllers, 16);
 	mVelShader.uniform("controllers", controllers, 16);
 	mVelShader.uniform("controllerMinIndices", minIndices, 16);
 	mVelShader.uniform("controllerMaxIndices", maxIndices, 16);
-	
-	//Hard coded
-	mVelShader.uniform("controller1", (*mCloudControllers)[0]->mLoc / res);
-	mVelShader.uniform("controller2", (*mCloudControllers)[1]->mLoc / res);
-	mVelShader.uniform("controller3", (*mCloudControllers)[2]->mLoc / res);
-	mVelShader.uniform("controller4", (*mCloudControllers)[3]->mLoc / res);
-	
+    
+    //Hard coded - delete this TODO
+	mVelShader.uniform("controller1", (*mCloudControllers)[0]->mLoc / particleTexRes);
+	mVelShader.uniform("controller2", (*mCloudControllers)[1]->mLoc / particleTexRes);
+	mVelShader.uniform("controller3", (*mCloudControllers)[2]->mLoc / particleTexRes);
+	mVelShader.uniform("controller4", (*mCloudControllers)[3]->mLoc / particleTexRes);
+    
     
 //	/*
      if(mLeapController->hasFingers){
@@ -419,29 +425,13 @@ void CloudParticle::draw(){
 	mPosShader.uniform("spriteTex", mSprite);
 	mPosShader.uniform("scaleX",(float)PARTICLES_X);
 	mPosShader.uniform("scaleY",(float)PARTICLES_Y);
-	
-    //Chuck this in in another method; use fields
-    //need a timer to kill things
-    Vec2f res(PARTICLES_X, PARTICLES_Y);
-	int activeControllersCount = 5;
-	//Dynamic, using arrays
-	int i = 0;
-	Vec2f controllers[16];
-	float minIndices[16];
-	float maxIndices[16];
-	while(i < activeControllersCount){
-		controllers[i] = (*mCloudControllers)[i]->mLoc / res;
-		minIndices[i] = (*mCloudControllers)[i]->indexMin;
-		maxIndices[i] = (*mCloudControllers)[i]->indexMax;
-		//console() << "Val " << i << ": " << (*mCloudControllers)[i]->mLoc << " - " << (*mCloudControllers)[i]->indexMin << ", " << (*mCloudControllers)[i]->indexMax << endl;
-		i++;
-	}
-    
-	mPosShader.uniform("maxControllers", i);
+
+    //update pos shader
+    mPosShader.uniform("maxControllers", activeControllersCount);
 	mPosShader.uniform("controllers", controllers, 16);
 	mPosShader.uniform("controllerMinIndices", minIndices, 16);
 	mPosShader.uniform("controllerMaxIndices", maxIndices, 16);
-	
+    
 	//gl::color(ColorA(1.0f,1.0f,1.0f,0.0f));
 	gl::pushMatrices();
 	

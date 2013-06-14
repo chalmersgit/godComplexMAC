@@ -114,6 +114,7 @@ void VectorFlowField::update()
 	//Cloud particles
 	if(mCloudParticle !=NULL){
 		glPushMatrix();
+        mCloudParticle->updateGPUcloudControllers();
 		mCloudParticle->update();
 		glPopMatrix();
 	}

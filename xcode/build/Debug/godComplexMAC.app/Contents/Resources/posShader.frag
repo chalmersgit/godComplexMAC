@@ -30,24 +30,14 @@ void main()
 		float maxValue = controllerMaxIndices[i];
 		if(maxValue >= 1.0){maxValue = 2.0;}
         if(origPos.x >= controllerMinIndices[i] && origPos.x < maxValue){
-			/*float theta = rand(origPos.xy)*M_PI*2.0;
-			float offset = controllerMaxIndices[i] - controllerMinIndices[i];
-			float amt = max(offset-abs(offset-origPos.x), offset-abs(offset-origPos.y));
-			amt *= 0.5;
-			pos.x =  cos(theta)*(-amt)*2.0 + controllers[i].x;
-			pos.y =  -sin(theta)*(-amt)*2.0 + controllers[i].y;*/
-            
             vec2 fromCenter = gl_TexCoord[0].xy - controllers[i];
             alph = length(fromCenter) / 150.0;
-            //alph = distance(fromCenter, gl_TexCoord[0].xy);
-            
-        
-//            alph = 0.5 - smoothstep(0.01, 0.05, distance(gl_TexCoord[0].xy, controllers[i]));
-            
         }
-//        alph = 0.0;
 	}
 
+    if(alph > 0.8){
+        alph = 0.8;
+    }
 	/*
      vec4 colFac = vec4(1.0);//texture2D(spriteTex, gl_PointCoord);
      //colFac.rgb *= texture2D( posTex, gl_TexCoord[0].st ).rgb;

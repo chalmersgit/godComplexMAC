@@ -46,6 +46,7 @@ public:
 	void draw();
 	void initFBO();
 	void setPos(ci::Vec2f);
+    void updateGPUcloudControllers();
     
 	void mouseDown(ci::app::MouseEvent event );
 	void mouseUp(ci::app::MouseEvent event );
@@ -58,6 +59,13 @@ public:
 	Vec2f	mMousePos;
 	Vec2f	mMousePosNormalised;
 	int		mMouseDownInt;
+    
+    Vec2f particleTexRes;
+    int activeControllersCount;
+    Vec2f prevControllers[16];
+	Vec2f controllers[16];
+	float minIndices[16];
+	float maxIndices[16];
     
 	Vec2i currentWindowSize;
 	Perlin mPerlin;
@@ -74,7 +82,7 @@ public:
 	gl::Texture mInfoTex;
 	gl::Texture mNoiseTex;
 	gl::Texture mSpriteTex;
-    
+
 	ci::Vec2f		mLoc;
     
 	int				mPos;

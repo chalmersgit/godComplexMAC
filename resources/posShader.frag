@@ -35,6 +35,9 @@ void main()
         }
 	}
 
+    if(alph > 0.8){
+        alph = 0.8;
+    }
 	/*
      vec4 colFac = vec4(1.0);//texture2D(spriteTex, gl_PointCoord);
      //colFac.rgb *= texture2D( posTex, gl_TexCoord[0].st ).rgb;

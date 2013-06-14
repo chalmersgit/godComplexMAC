@@ -8,7 +8,7 @@ using namespace ci;
 using namespace ci::app;
 using namespace std;
 
-const Vec2i kWindowSize = Vec2i(1280, 720);
+const Vec2i kWindowSize = Vec2i(1920, 1080);
 const Vec2f kPixel = Vec2f::one() / Vec2f(kWindowSize);
 
 WaterModule::WaterModule(){
@@ -137,7 +137,24 @@ void WaterModule::drawFullScreenRect()
 void WaterModule::makeRipples(){
 	gl::color(ColorAf(1.0f, 0.0f, 0.0f, 1.0f));
     
-    gl::drawSolidCircle(Vec2f(300.0f, 300.0f), 20.0f, 12);
+//    gl::drawSolidCircle(Vec2f(964.0f, 42.0f), 20.0f, 12);
+    gl::drawSolidCircle(Vec2f(664.0f, 206.0f), 20.0f, 12);
+    gl::drawSolidCircle(Vec2f(547.0f, 444.0f), 20.0f, 12);
+    gl::drawSolidCircle(Vec2f(679.0f, 694.0f), 20.0f, 12);
+    gl::drawSolidCircle(Vec2f(911.0f, 829.0f), 20.0f, 12);
+    gl::drawSolidCircle(Vec2f(1209.0f, 711.0f), 20.0f, 12);
+    gl::drawSolidCircle(Vec2f(1371.0f, 596.0f), 20.0f, 12);
+    gl::drawSolidCircle(Vec2f(1483.0f, 246.0f), 20.0f, 12);
+    gl::drawSolidCircle(Vec2f(1632.0f, 555.0f), 20.0f, 12);
+    gl::drawSolidCircle(Vec2f(1689.0f, 969.0f), 20.0f, 12);
+    gl::drawSolidCircle(Vec2f(1248.0f, 177.0f), 20.0f, 12);
+    gl::drawSolidCircle(Vec2f(1141.0f, 433.0f), 20.0f, 12);
+    gl::drawSolidCircle(Vec2f(0.0f, 0.0f), 40.0f, 12);
+    gl::drawSolidCircle(Vec2f(0.0f, 1080.0f), 40.0f, 12);
+    gl::drawSolidCircle(Vec2f(0.0f, 540.0f), 40.0f, 12);
+    
+    
+    
     gl::color(Color::white());
 }
 

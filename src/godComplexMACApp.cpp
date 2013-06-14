@@ -63,8 +63,8 @@ public:
 
 void godComplexApp::prepareSettings(Settings *settings )
 {
-    settings->setWindowSize(1280, 720); //NOTE: DEBUG SIZE
-//      settings->setWindowSize(1920, 1080); //NOTE: OUTPUT SIZE TODO: FIX
+//    settings->setWindowSize(1280, 720); //NOTE: DEBUG SIZE
+    settings->setWindowSize(1920, 1080); //NOTE: OUTPUT SIZE TODO: FIX
 	settings->setFrameRate(60.0);
 }
 
@@ -220,7 +220,8 @@ void godComplexApp::keyDown(KeyEvent event)
 
 void godComplexApp::update()
 {
-	if(timeline().getCurrentTime() > waterPrevTime + 5.0f  ){
+	if(timeline().getCurrentTime() > waterPrevTime + 10.0f  ){
+        console() << "water ripples" << endl;
 		mWaterModule->setMakeRipples();
 		waterPrevTime = timeline().getCurrentTime();
 	}

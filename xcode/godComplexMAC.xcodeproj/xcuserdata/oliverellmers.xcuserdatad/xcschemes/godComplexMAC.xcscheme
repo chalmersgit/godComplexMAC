@@ -57,6 +57,13 @@
             ReferencedContainer = "container:godComplexMAC.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "DYLD_LIBRARY_PATH"
+            value = "/Users/oliverellmers/Desktop/cinder_0.8.4_mac/blocks/LeapSdk/lib/macosx"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>

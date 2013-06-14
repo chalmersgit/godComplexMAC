@@ -42,6 +42,8 @@
 		CD2DE86C1766DDA6006044E7 /* wellington.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD2DE8541766DC02006044E7 /* wellington.jpg */; };
 		CD2DE86D1766DDA6006044E7 /* wellington01.obj in Resources */ = {isa = PBXBuildFile; fileRef = CD2DE8561766DC02006044E7 /* wellington01.obj */; };
 		CD2DE86F1766E1AB006044E7 /* point02.png in Resources */ = {isa = PBXBuildFile; fileRef = CD2DE86E1766E1AB006044E7 /* point02.png */; };
+		CD9B107A176AA4180001F938 /* LeapController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CD9B1078176AA4180001F938 /* LeapController.cpp */; };
+		CD9B107C176ABA380001F938 /* libLeap.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CD9B107B176ABA380001F938 /* libLeap.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +95,12 @@
 		CD2DE85B1766DC13006044E7 /* VectorSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VectorSet.h; path = ../include/VectorSet.h; sourceTree = "<group>"; };
 		CD2DE85C1766DC13006044E7 /* WaterModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WaterModule.h; path = ../include/WaterModule.h; sourceTree = "<group>"; };
 		CD2DE86E1766E1AB006044E7 /* point02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = point02.png; path = ../resources/point02.png; sourceTree = "<group>"; };
+		CD9B1077176AA3DD0001F938 /* LeapController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LeapController.h; path = ../resources/LeapController.h; sourceTree = "<group>"; };
+		CD9B1078176AA4180001F938 /* LeapController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LeapController.cpp; path = ../src/LeapController.cpp; sourceTree = "<group>"; };
+		CD9B107B176ABA380001F938 /* libLeap.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libLeap.dylib; path = ../../../../cinder_0.8.4_mac/blocks/LeapSdk/lib/macosx/libLeap.dylib; sourceTree = "<group>"; };
+		CD9B107D176ABC170001F938 /* Cinder-LeapSdk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cinder-LeapSdk.h"; sourceTree = "<group>"; };
+		CD9B107E176ABC280001F938 /* Leap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Leap.h; sourceTree = "<group>"; };
+		CD9B107F176ABC2E0001F938 /* LeapMath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeapMath.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +118,7 @@
 				00B784B40FF439BC000DE1D7 /* AudioToolbox.framework in Frameworks */,
 				00B784B50FF439BC000DE1D7 /* AudioUnit.framework in Frameworks */,
 				00B784B60FF439BC000DE1D7 /* CoreAudio.framework in Frameworks */,
+				CD9B107C176ABA380001F938 /* libLeap.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,13 +128,14 @@
 		080E96DDFE201D6D7F000001 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				00BAE6590E7ED9C10018A608 /* godComplexMACApp.cpp */,
 				CD2DE8391766DBED006044E7 /* CloudController.cpp */,
 				CD2DE83A1766DBED006044E7 /* CloudParticle.cpp */,
 				CD2DE83B1766DBED006044E7 /* DirVector.cpp */,
 				CD2DE83C1766DBED006044E7 /* VectorFlowField.cpp */,
 				CD2DE83D1766DBED006044E7 /* VectorSet.cpp */,
 				CD2DE83E1766DBED006044E7 /* WaterModule.cpp */,
-				00BAE6590E7ED9C10018A608 /* godComplexMACApp.cpp */,
+				CD9B1078176AA4180001F938 /* LeapController.cpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -150,6 +160,7 @@
 		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CD9B107B176ABA380001F938 /* libLeap.dylib */,
 				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
 				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
 				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
@@ -180,6 +191,9 @@
 		29B97315FDCFA39411CA2CEA /* Headers */ = {
 			isa = PBXGroup;
 			children = (
+				CD9B107F176ABC2E0001F938 /* LeapMath.h */,
+				CD9B107E176ABC280001F938 /* Leap.h */,
+				CD9B107D176ABC170001F938 /* Cinder-LeapSdk.h */,
 				CD2DE8571766DC13006044E7 /* CloudController.h */,
 				CD2DE8581766DC13006044E7 /* CloudParticle.h */,
 				CD2DE8591766DC13006044E7 /* DirVector.h */,
@@ -187,6 +201,7 @@
 				CD2DE85B1766DC13006044E7 /* VectorSet.h */,
 				CD2DE85C1766DC13006044E7 /* WaterModule.h */,
 				32CA4F630368D1EE00C91783 /* godComplexMAC_Prefix.pch */,
+				CD9B1077176AA3DD0001F938 /* LeapController.h */,
 			);
 			name = Headers;
 			sourceTree = "<group>";
@@ -309,6 +324,7 @@
 				CD2DE8421766DBED006044E7 /* VectorFlowField.cpp in Sources */,
 				CD2DE8431766DBED006044E7 /* VectorSet.cpp in Sources */,
 				CD2DE8441766DBED006044E7 /* WaterModule.cpp in Sources */,
+				CD9B107A176AA4180001F938 /* LeapController.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +334,8 @@
 		C01FCF4B08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ONLY_ACTIVE_ARCH_PRE_XCODE_3_1)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -329,6 +347,9 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../../../../cinder_0.8.4_mac/blocks/LeapSdk/lib/macosx\"";
+				New_Setting = "";
+				ONLY_ACTIVE_ARCH_PRE_XCODE_3_1 = "$(NATIVE_ARCH)";
 				OTHER_LDFLAGS = (
 					"\"$(CINDER_PATH)/lib/libcinder_d.a\"",
 					"-lcurl",
@@ -336,6 +357,7 @@
 				PRODUCT_NAME = godComplexMAC;
 				SDKROOT = macosx;
 				SYMROOT = ./build;
+				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" ../include";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -343,6 +365,9 @@
 		C01FCF4C08A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_FAST_MATH = YES;
@@ -355,6 +380,8 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../../../../cinder_0.8.4_mac/blocks/LeapSdk/lib/macosx\"";
+				New_Setting = "";
 				OTHER_LDFLAGS = (
 					"\"$(CINDER_PATH)/lib/libcinder.a\"",
 					"-lcurl",
@@ -363,6 +390,7 @@
 				SDKROOT = macosx;
 				STRIP_INSTALLED_PRODUCT = YES;
 				SYMROOT = ./build;
+				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" ../include";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -370,15 +398,17 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = i386;
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
 				CINDER_PATH = ../../../../cinder_0.8.4_mac;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/boost\"";
-				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				LIBRARY_SEARCH_PATHS = "\"$(CINDER_PATH)/blocks/LeapSdk/lib/macosx\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PREBINDING = NO;
-				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
+				SDKROOT = macosx;
 				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" ../include";
 			};
 			name = Debug;
@@ -386,15 +416,17 @@
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = i386;
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
 				CINDER_PATH = ../../../../cinder_0.8.4_mac;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/boost\"";
-				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				LIBRARY_SEARCH_PATHS = "\"$(CINDER_PATH)/blocks/LeapSdk/lib/macosx\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PREBINDING = NO;
-				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
+				SDKROOT = macosx;
 				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" ../include";
 			};
 			name = Release;

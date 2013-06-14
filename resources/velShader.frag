@@ -141,6 +141,8 @@ void main(){
 			
 			//pos = constructSquare(origPos, pos, controllerMaxIndices[i] - controllerMinIndices[i]);
 			//pos = addVariation(pos, controllers[i]);
+            
+            //break! add this for efficiency 
 		}
 	}
 //	*/

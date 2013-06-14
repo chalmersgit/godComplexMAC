@@ -4,8 +4,10 @@
 uniform sampler2D posTex;
 uniform sampler2D velTex;
 uniform sampler2D infTex;
+uniform sampler2D oPosTex;
 
 uniform sampler2D spriteTex;
+varying vec4 texCoord;
 
 varying float age;
 
@@ -13,14 +15,26 @@ uniform vec2	sample_offset;
 
 //What needs to happen:
 //Uniform controller, take distance from controller to determine alpha
-
+uniform int maxControllers;
+uniform vec2 controllers[16];
+uniform float controllerMinIndices[16];
+uniform float controllerMaxIndices[16];
 
 void main()
 {
+    vec3 origPos = texture2D( oPosTex, gl_TexCoord[0].st ).rgb;
     
+    float alph = 1.0;
     
+    for(int i = 0; i < maxControllers; i++){
+		float maxValue = controllerMaxIndices[i];
+		if(maxValue >= 1.0){maxValue = 2.0;}
+        if(origPos.x >= controllerMinIndices[i] && origPos.x < maxValue){
+            vec2 fromCenter = gl_TexCoord[0].xy - controllers[i];
+            alph = length(fromCenter) / 150.0;
+        }
+	}
 
-    
 	/*
      vec4 colFac = vec4(1.0);//texture2D(spriteTex, gl_PointCoord);
      //colFac.rgb *= texture2D( posTex, gl_TexCoord[0].st ).rgb;
@@ -67,8 +81,8 @@ void main()
 	
 	
 	//NOTE: Ollie testing
-    vec4 c = vec4(1.0);
-    float alph = 0.5 - smoothstep(0.1, 0.5, distance(gl_TexCoord[0].xy, vec2(0.5, 0.1)));
+    //vec4 c = vec4(1.0);
+    //float alph = 0.5 - smoothstep(0.1, 0.5, distance(gl_TexCoord[0].xy, vec2(0.5, 0.1)));
     gl_FragColor = vec4(1.0, 1.0, 1.0, alph);
 }
 //*/

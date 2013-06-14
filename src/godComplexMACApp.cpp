@@ -209,6 +209,10 @@ void godComplexMACApp::keyDown(KeyEvent event)
 	if(event.getChar() == 'z'){
 		mFlowField->invokePrintFlowField();
 	}
+    if(event.getChar() == 'f'){
+		mDrawFlowField = !mDrawFlowField;
+		mFlowField->setDrawFlow(mDrawFlowField);
+	}
 }
 
 void godComplexMACApp::update()

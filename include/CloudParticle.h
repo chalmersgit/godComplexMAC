@@ -23,13 +23,13 @@
 
 //#include "CloudController.h"
 
-//#include "LeapController.h"
+#include "LeapController.h"
 
 using namespace ci;
 using namespace std;
 
-#define WIDTH 1280 //NOTE: WIDTH HEIGHT FOR LEAP WINDOW MAPPING
-#define HEIGHT 720 // Leap
+#define WIDTH 1920 //NOTE: WIDTH HEIGHT FOR LEAP WINDOW MAPPING
+#define HEIGHT 1080 // Leap
 
 
 #define PARTICLES_X 256 //This should be sqrt(WIDTH * HEIGHT)
@@ -94,8 +94,8 @@ public:
 	int maxY;
     
     
-	//Controller		mController;
-	//LeapController*	mLeapController;
+	Controller		mController;
+	LeapController*	mLeapController;
     
     vector<CloudController*>* mCloudControllers;
     

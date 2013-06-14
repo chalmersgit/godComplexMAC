@@ -14,8 +14,13 @@ uniform vec2	sample_offset;
 //What needs to happen:
 //Uniform controller, take distance from controller to determine alpha
 
+
 void main()
 {
+    
+    
+
+    
 	/*
      vec4 colFac = vec4(1.0);//texture2D(spriteTex, gl_PointCoord);
      //colFac.rgb *= texture2D( posTex, gl_TexCoord[0].st ).rgb;

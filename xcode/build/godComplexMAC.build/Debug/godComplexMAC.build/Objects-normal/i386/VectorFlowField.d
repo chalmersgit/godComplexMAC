@@ -1101,4 +1101,7 @@ dependencies: \
   ../../../../cinder_0.8.4_mac/boost/boost/type_traits/cv_traits.hpp \
   ../../../../cinder_0.8.4_mac/boost/boost/type_traits/add_cv.hpp \
   ../../../../cinder_0.8.4_mac/boost/boost/type_traits/remove_volatile.hpp \
-  ../../../../cinder_0.8.4_mac/boost/boost/type_traits/function_traits.hpp
+  ../../../../cinder_0.8.4_mac/boost/boost/type_traits/function_traits.hpp \
+  /Users/oliverellmers/Desktop/Cinder\ Projects/Projects/godComplexMAC/xcode/../resources/LeapController.h \
+  /Users/oliverellmers/Desktop/Cinder\ Projects/Projects/godComplexMAC/xcode/Leap.h \
+  /Users/oliverellmers/Desktop/Cinder\ Projects/Projects/godComplexMAC/xcode/LeapMath.h

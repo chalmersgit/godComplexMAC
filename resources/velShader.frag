@@ -112,7 +112,10 @@ void main(){
 		vel = origVel;
 	}
     
+    
+    
 	//Shape particles
+//    /*
 	for(int i = 0; i < maxControllers; i++){
 		float maxValue = controllerMaxIndices[i];
 		if(maxValue >= 1.0){maxValue = 2.0;}
@@ -123,15 +126,15 @@ void main(){
 			
 			float theta = rand(origPos.xy)*M_PI*2.0;
 			float offset = controllerMaxIndices[i] - controllerMinIndices[i];
-			///float amt = max(offset-abs(offset-origPos.x), offset-abs(offset-origPos.y));
-			float amtx = origPos.x;
-			float amty = origPos.y;
+			float amt = max(offset-abs(offset-origPos.x), offset-abs(offset-origPos.y));
+			//float amtx = origPos.x;
+			//float amty = origPos.y;
 			
-			amtx *= 0.1;//cloud size
-			amty *= 0.1;
+			amt *= 0.5;//cloud size
+			//amty *= 0.5;
 			
-			pos.x =  cos(theta)*(-amtx)*2.0 + controllers[i].x;
-			pos.y =  sin(theta)*(-amty)*2.0 + controllers[i].y;
+			pos.x =  cos(theta)*(-amt)*2.0 + controllers[i].x;
+			pos.y =  -sin(theta)*(-amt)*2.0 + controllers[i].y;
 			
 			//pos.x =  cos(theta) + controllers[i].x;
 			//pos.y =  - sin(theta) + controllers[i].y;
@@ -140,7 +143,9 @@ void main(){
 			//pos = addVariation(pos, controllers[i]);
 		}
 	}
-	
+//	*/
+    
+     
 	/*
      if(origPos.x < 0.5 && origPos.y < 0.5){
      //Squares the particles

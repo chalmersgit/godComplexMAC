@@ -1106,4 +1106,7 @@ dependencies: \
   ../../../../cinder_0.8.4_mac/include/cinder/Utilities.h \
   ../../../../cinder_0.8.4_mac/include/cinder/Perlin.h \
   ../../../../cinder_0.8.4_mac/include/cinder/gl/Fbo.h \
+  /Users/oliverellmers/Desktop/Cinder\ Projects/Projects/godComplexMAC/xcode/../resources/LeapController.h \
+  /Users/oliverellmers/Desktop/Cinder\ Projects/Projects/godComplexMAC/xcode/Leap.h \
+  /Users/oliverellmers/Desktop/Cinder\ Projects/Projects/godComplexMAC/xcode/LeapMath.h \
   /Users/oliverellmers/Desktop/Cinder\ Projects/Projects/godComplexMAC/xcode/../include/WaterModule.h

@@ -1096,4 +1096,7 @@ dependencies: \
   ../../../../cinder_0.8.4_mac/boost/boost/type_traits/function_traits.hpp \
   ../include/CloudController.h ../include/VectorSet.h \
   ../include/DirVector.h ../include/Resources.h \
-  ../../../../cinder_0.8.4_mac/include/cinder/CinderResources.h
+  ../../../../cinder_0.8.4_mac/include/cinder/CinderResources.h \
+  /Users/oliverellmers/Desktop/Cinder\ Projects/Projects/godComplexMAC/xcode/../resources/LeapController.h \
+  /Users/oliverellmers/Desktop/Cinder\ Projects/Projects/godComplexMAC/xcode/Leap.h \
+  /Users/oliverellmers/Desktop/Cinder\ Projects/Projects/godComplexMAC/xcode/LeapMath.h

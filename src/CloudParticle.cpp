@@ -93,8 +93,8 @@ void CloudParticle::setup()
 		maxY = 400;
 		console() << "4" << endl;
 		
-		//mLeapController = new LeapController();
-		//mController.addListener(*mLeapController);
+		mLeapController = new LeapController();
+		mController.addListener(*mLeapController);
 		console() << "5" << endl;
 	}
 	catch( gl::GlslProgCompileExc &exc ) {
@@ -321,7 +321,7 @@ void CloudParticle::update()
 	mVelShader.uniform("controller4", (*mCloudControllers)[3]->mLoc / res);
 	
     
-	/*
+//	/*
      if(mLeapController->hasFingers){
      for(int i = 0; i < mLeapController->fingerPositions.size(); i++){
      float leap_x = mLeapController->fingerPositions[i].x;
@@ -331,7 +331,7 @@ void CloudParticle::update()
      float newX = ( leap_x - minX ) / ( maxX - minX ) * currentWindowSize.x;
      float newY = ( leap_y - minY ) / ( maxY - minY ) * currentWindowSize.y;
      newY = currentWindowSize.y - newY;
-     
+         console() << newX << ", " << newY << endl;
      switch (i)
      {
      case 0:
@@ -360,10 +360,11 @@ void CloudParticle::update()
      //float leap_x = mLeapController->avgPos.x;
      //float leap_y = mLeapController->avgPos.y;
      }
-     else{*/
+     else{
     mVelShader.uniform("mousePos", mMousePos);
     mVelShader.uniform("checkUserInput", mMouseDownInt);
-	//}
+	}
+//    */
 	
 	mVelShader.uniform("scaleX",(float)PARTICLES_X);
 	mVelShader.uniform("scaleY",(float)PARTICLES_Y);

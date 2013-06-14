@@ -29,7 +29,7 @@ void DirVector::update(const Channel32f &channel, const Vec2f &windDirection){
 	mDir = mRotationVector; //mouseLoc - mLoc;
 	mDir.safeNormalize();
 	//mDir.normalize();
-
+    
 	Vec2f newLoc = mLoc + mDir * 100.f;
 	newLoc.x = constrain(newLoc.x, 0.f, channel.getWidth() - 1.f);
 	newLoc.x = constrain(newLoc.x, 0.f, channel.getHeight() - 1.f);
@@ -42,7 +42,7 @@ void DirVector::draw(){
 	//console() << "draw1: << " << mDir << endl;
 	//Rectf rect(mLoc.x, mLoc.y, mLoc.x + mRadius, mLoc.y + mRadius);
 	//gl::drawSolidRect(rect);
-
+    
 	gl::color(Color(1.f, 1.f, 1.f));
 	float arrowLength = 15.f;
 	

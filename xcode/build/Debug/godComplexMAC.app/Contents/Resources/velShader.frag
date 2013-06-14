@@ -21,7 +21,9 @@ uniform vec2 finger4;
 uniform vec2 finger5;
 
 uniform int maxControllers;
-//uniform vec2[] controllers;
+uniform vec2[16] controllers;
+uniform float[16] controllerMinIndices;
+uniform float[16] controllerMaxIndices;
 
 uniform vec2 controller1;
 uniform vec2 controller2;
@@ -34,34 +36,64 @@ uniform int checkUserInput;
 uniform float scaleX;
 uniform float scaleY;
 
+//float shift = 0.2;
+vec3 constructSquare(vec3 ov, vec3 v, float shift){
+	if(ov.y >= 0.25 && ov.y < 0.5){ //move to top right
+		v.y = v.y - 0.5;
+	}
+	else if(ov.y >= 0.5 && ov.y < 0.75){ //move to top left
+		v.y = v.y - 0.75;
+		v.x = v.x - shift;
+	}
+	else if(ov.y >= 0.75){ //move to bottom left
+		v.y = v.y - 0.75;
+		v.x = v.x - shift;
+	}
+	return v;
+}
+
+vec3 addVariation(vec3 v, vec2 controller){
+	float thresh = 0.65;
+	vec2 dirVal = vec2(v.x - controller.x, v.y - controller.y);
+	float distSqrd = length(dirVal) * length(dirVal);
+	float percent = distSqrd/0.25;
+    float threshDelta = 1.0 - thresh;
+	float adjustedPercent = ( percent - thresh )/threshDelta;
+    float F = ( 1.0 - ( cos( adjustedPercent * M_PI*2.0) * -0.5 + 0.5 ) ) * 0.04;
+    dirVal = normalize(dirVal) * F;
+    v.x += dirVal.x;
+	v.y += dirVal.y;
+	
+	return v;
+}
 
 float rand(vec2 co){
     return fract(sin(dot(co.xy ,vec2(12.9898,78.233))) * 43758.5453);
 }
 
-
 void main(){
 	vec3 pos = texture2D( positions, texCoord.st).rgb;
 	
 	float mass = texture2D( positions, texCoord.st).a;
-
+    
 	vec3 vel = texture2D( velocities, texCoord.st).rgb;
 	float decay = texture2D( velocities, texCoord.st).a;
-
+    
 	float age = texture2D( information, texCoord.st).r;
 	float maxAge = texture2D( information, texCoord.st).g;
-
+    
 	vec2 noise = texture2D( noiseTex, pos.xy).rg;
 	vec3 origPos = texture2D(oPositions, texCoord.st).rgb;
 	
 	//if(noise.x < 0.0){
 	//	noise.x *= -1;
 	//}
-	vel += vec3(noise.x*15.0,noise.y*15.0,sin(10.0));
+	vel += vec3(noise.x,noise.y,0.0);
 	
 	
 	//Life/death cycle
 	age += tStep;
+	
 	if( age >= maxAge ){
 		vec3 origVel = texture2D(oVelocities, texCoord.st).rgb;
 		age = 0.0;
@@ -72,37 +104,120 @@ void main(){
 		vel = origVel;
 	}
     
+	//Shape particles
+	for(int i = 0; i < maxControllers; i++){
+		float maxValue = controllerMaxIndices[i];
+		if(maxValue >= 1){maxValue = 2;}
+		if(origPos.x >= controllerMinIndices[i] && origPos.x < maxValue){
+			//pos.x = controllerMaxIndices[i] - origPos.x + controllers[i].x;
+			//pos.y = origPos.y + controllers[i].y;
+			
+			
+			float theta = rand(origPos.xy)*M_PI*2.0;
+			float offset = controllerMaxIndices[i] - controllerMinIndices[i];
+			///float amt = max(offset-abs(offset-origPos.x), offset-abs(offset-origPos.y));
+			float amtx = origPos.x;
+			float amty = origPos.y;
+			
+			amtx *= 0.1;//cloud size
+			amty *= 0.1;
+			
+			pos.x =  cos(theta)*(-amtx)*2.0 + controllers[i].x;
+			pos.y =  sin(theta)*(-amty)*2.0 + controllers[i].y;
+			
+			//pos.x =  cos(theta) + controllers[i].x;
+			//pos.y =  - sin(theta) + controllers[i].y;
+			
+			//pos = constructSquare(origPos, pos, controllerMaxIndices[i] - controllerMinIndices[i]);
+			//pos = addVariation(pos, controllers[i]);
+		}
+	}
+	
+	/*
+     if(origPos.x < 0.5 && origPos.y < 0.5){
+     //Squares the particles
+     
+     float theta = rand(origPos.xy)*M_PI*2.0;
+     float amt = max(.25-abs(.25-origPos.x), .25-abs(.25-origPos.y));//(maxAmt*2.0) - distance(vec2(0.25, 0.25) , origPos.xy);
+     amt *= 0.5;//cloud size
+     pos.x =   cos(theta)*(-amt)*2.0 + controller1.x;
+     pos.y =  - sin(theta)*(-amt) + controller1.y;
+     
+     
+     //Add variation
+     float thresh = 0.25;
+     vec2 dirVal = vec2(pos.x - controller1.x, pos.y - controller1.y);
+     float distSqrd = length(dirVal) * length(dirVal);
+     float percent = distSqrd/0.25;
+     float threshDelta = 1.0 - thresh;
+     float adjustedPercent = ( percent - thresh )/threshDelta;
+     }*/
     
-    //Particle interaction
+	
+	/* Hard Coded
+     //Line up the particles with their controllers
+     if(origPos.x < 0.25){
+     //Squares the particles
+     pos.x = 0.25 - origPos.x + controller1.x;
+     pos.y = origPos.y + controller1.y;
+     
+     pos = constructSquare(origPos, pos);
+     pos = addVariation(pos, controller1);
+     }
+     if(origPos.x >= 0.25 && origPos.x < 0.5){
+     pos.x = 0.5 - origPos.x + controller2.x;
+     pos.y = origPos.y + controller2.y;
+     
+     pos = constructSquare(origPos, pos);
+     pos = addVariation(pos, controller2);
+     }
+     
+     if(origPos.x >= 0.5 && origPos.x < 0.75){
+     pos.x = 0.75 - origPos.x + controller3.x;
+     pos.y = origPos.y + controller3.y;
+     
+     pos = constructSquare(origPos, pos);
+     pos = addVariation(pos, controller3);
+     }
+     if(origPos.x >= 0.75){
+     pos.x = 1 - origPos.x + controller4.x;
+     pos.y = origPos.y + controller4.y;
+     
+     pos = constructSquare(origPos, pos);
+     pos = addVariation(pos, controller4);
+     }
+     */
+	
+	//Particle interaction
 	if(checkUserInput == -1){
-		/*float x = (controller1.x - (scaleX*pos.x)) * (controller1.x - (scaleX*pos.x));
-		float y = (controller1.y - (scaleY*pos.y)) * (controller1.y - (scaleY*pos.y));
+		float x = (mousePos.x - (scaleX*pos.x)) * (mousePos.x - (scaleX*pos.x));
+		float y = (mousePos.y - (scaleY*pos.y)) * (mousePos.y - (scaleY*pos.y));
 		if( x+y < 50.0){
 			vel.x = -vel.x;
 		}
-		
-		float x2 = (controller2.x - (scaleX*pos.x)) * (controller2.x - (scaleX*pos.x));
-		float y2 = (controller2.y - (scaleY*pos.y)) * (controller2.y - (scaleY*pos.y));
-		if( x2+y2 < 50.0){
-			vel.x = -vel.x;
-		}
-		
-		
-		float x3 = (controller3.x - (scaleX*pos.x)) * (controller3.x - (scaleX*pos.x));
-		float y3 = (controller3.y - (scaleY*pos.y)) * (controller3.y - (scaleY*pos.y));
-		if( x3+y3 < 50.0){
-			vel.x = -vel.x;
-		}
-		
-		float x4 = (controller4.x - (scaleX*pos.x)) * (controller4.x - (scaleX*pos.x));
-		float y4 = (controller4.y - (scaleY*pos.y)) * (controller4.y - (scaleY*pos.y));
-		if( x4+y4 < 50.0){
-			vel.x = -vel.x;
-		}*/
+		/*
+         float x2 = (controller2.x - (scaleX*pos.x)) * (controller2.x - (scaleX*pos.x));
+         float y2 = (controller2.y - (scaleY*pos.y)) * (controller2.y - (scaleY*pos.y));
+         if( x2+y2 < 50.0){
+         vel.x = -vel.x;
+         }
+         
+         
+         float x3 = (controller3.x - (scaleX*pos.x)) * (controller3.x - (scaleX*pos.x));
+         float y3 = (controller3.y - (scaleY*pos.y)) * (controller3.y - (scaleY*pos.y));
+         if( x3+y3 < 50.0){
+         vel.x = -vel.x;
+         }
+         
+         float x4 = (controller4.x - (scaleX*pos.x)) * (controller4.x - (scaleX*pos.x));
+         float y4 = (controller4.y - (scaleY*pos.y)) * (controller4.y - (scaleY*pos.y));
+         if( x4+y4 < 50.0){
+         vel.x = -vel.x;
+         }*/
 	}
-///*
+    ///*
 	if(checkUserInput >= 1){
-		float x = (finger1.x - (scaleX*pos.x)) * (finger1.x - (scaleX*pos.x));  //NOTE: do in main app - if fingers not active set to 0, then multiply by that... AVOID BRANCHING!!
+		float x = (finger1.x - (scaleX*pos.x)) * (finger1.x - (scaleX*pos.x));
 		float y = (finger1.y - (scaleY*pos.y)) * (finger1.y - (scaleY*pos.y));
 		if( x+y < 50.0){
 			vel.x = -vel.x;
@@ -136,79 +251,9 @@ void main(){
 			vel.x = -vel.x;
 		}
 	}
-//    */
-	
-	/*
-	for(int i = 0; i < maxControllers; i++){
-				pos.x =  (0.25) - origPos.x + controller1.x;
-		pos.y = (0.25) - origPos.y + controller1.y;
-		
-		
-		//Add variation 
-		float thresh = 0.65; 
-		vec2 dirVal = vec2(pos.x - controller1.x, pos.y - controller1.y);
-		float distSqrd = length(dirVal) * length(dirVal);
-		float percent = distSqrd/0.25;
-        float threshDelta = 1.0f - thresh; 
-		float adjustedPercent = ( percent - thresh )/threshDelta;
-        float F = ( 1.0 - ( cos( adjustedPercent * M_PI*2.0) * -0.5f + 0.5f ) ) * 0.04f;
-        dirVal = normalize(dirVal) * F;
-        pos.x += dirVal.x;
-		pos.y += dirVal.y;
-	}
-	*/
-	//Line up the particles with their controllers
-	if(origPos.x < 0.5 && origPos.y < 0.5){
-		//Squares the particles
-		
-        //pos.x =  (0.25) - origPos.x + controller1.x;
-		//pos.y = (0.25) - origPos.y + controller1.y;
-
-		float theta = rand(origPos.xy)*M_PI*2.0;
-
-        float amt = max(.25-abs(.25-origPos.x), .25-abs(.25-origPos.y));//(maxAmt*2.0) - distance(vec2(0.25, 0.25) , origPos.xy);
-        amt *= 0.5;//cloud size
-        
-        pos.x =   cos(theta)*(-amt)*2.0 + controller1.x;
-		pos.y =  - sin(theta)*(-amt) + controller1.y;
-        
-		
-		//Add variation 
-		float thresh = 0.25;
-		vec2 dirVal = vec2(pos.x - controller1.x, pos.y - controller1.y);
-		float distSqrd = length(dirVal) * length(dirVal);
-		float percent = distSqrd/0.25;
-        float threshDelta = 1.0 - thresh;
-		float adjustedPercent = ( percent - thresh )/threshDelta;
-        
-        
-        //float F = ( 0.5 - ( cos( adjustedPercent * M_PI*3.0) * -0.2 + 6.5 ) ) * 0.02; //NOTE: original
-        
-        //NOTE: generating a new algorythm
-//        float F = 
-        
-        
-        //dirVal = normalize(dirVal) * F;
-        //pos.x += dirVal.x;
-		//pos.y += dirVal.y;
-	}
-//	/*
-	if(origPos.x >= 0.5 && origPos.y < 0.5){
-		pos.x = origPos.x + controller2.x;// + vel.x; // * noise.x;
-		pos.y = origPos.y + controller2.y;// + vel.y; // * noise.y;
-	}
-	
-	if(origPos.x < 0.5 && origPos.y >= 0.5){
-		pos.x = origPos.x + controller3.x;// + vel.x;; // * noise.x;
-		pos.y = origPos.y + controller3.y;// + vel.y; // * noise.y;
-	}
-	
-	if(origPos.x >= 0.5 && origPos.y >= 0.5){
-		pos.x = origPos.x + controller4.x;// + vel.x;; //* noise.x;
-		pos.y = origPos.y + controller4.y;// + vel.y; // noise.y;
-	}
-//	*/
-	
+    //    */
+    
+    
     
 	//Add noise to the particles
 	pos.x += (vel.x);
@@ -216,12 +261,53 @@ void main(){
 	
 	
 	
+    
+	
 	//position + mass
 	gl_FragData[0] = vec4(pos, mass);
-
+    
 	//velocity + decay
 	gl_FragData[1] = vec4(vel, decay);
-
+    
 	//age information
 	gl_FragData[2] = vec4(age, maxAge, 0.0, 1.0);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ if(origPos.x < 0.5 && origPos.y < 0.5){
+ //Squares the particles
+ pos.x =  (0.25) - origPos.x + controller1.x;
+ pos.y = (0.25) - origPos.y + controller1.y;
+ 
+ 
+ //Add variation
+ float thresh = 0.65;
+ vec2 dirVal = vec2(pos.x - controller1.x, pos.y - controller1.y);
+ float distSqrd = length(dirVal) * length(dirVal);
+ float percent = distSqrd/0.25;
+ float threshDelta = 1.0 - thresh; 
+ float adjustedPercent = ( percent - thresh )/threshDelta;
+ float F = ( 1.0 - ( cos( adjustedPercent * M_PI*2.0) * -0.5 + 0.5 ) ) * 0.04;
+ dirVal = normalize(dirVal) * F;
+ pos.x += dirVal.x;
+ pos.y += dirVal.y;
+ }*/

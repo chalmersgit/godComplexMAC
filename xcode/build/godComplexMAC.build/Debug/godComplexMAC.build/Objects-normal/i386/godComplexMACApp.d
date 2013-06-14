@@ -511,6 +511,10 @@ dependencies: \
   ../../../../cinder_0.8.4_mac/include/cinder/Camera.h \
   ../../../../cinder_0.8.4_mac/include/cinder/Sphere.h \
   ../../../../cinder_0.8.4_mac/include/cinder/gl/GlslProg.h \
+  ../../../../cinder_0.8.4_mac/include/cinder/Timeline.h \
+  ../../../../cinder_0.8.4_mac/include/cinder/TimelineItem.h \
+  ../../../../cinder_0.8.4_mac/include/cinder/Easing.h \
+  ../../../../cinder_0.8.4_mac/include/cinder/Tween.h \
   ../include/Resources.h \
   ../../../../cinder_0.8.4_mac/include/cinder/CinderResources.h \
   /Users/oliverellmers/Desktop/Cinder\ Projects/Projects/godComplexMAC/xcode/../include/VectorFlowField.h \

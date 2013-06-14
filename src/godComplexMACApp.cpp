@@ -9,6 +9,7 @@
 #include "cinder/Sphere.h"
 #include "cinder/Sphere.h"
 #include "cinder/gl/GlslProg.h"
+#include "cinder/Timeline.h"
 
 #include "Resources.h"
 #include "VectorFlowField.h"
@@ -18,14 +19,14 @@ using namespace ci;
 using namespace ci::app;
 using namespace std;
 
-class godComplexMACApp : public AppNative {
+class godComplexApp : public AppNative {
 public:
 	void prepareSettings( Settings *settings );
 	void setup();
     //	void resize(ResizeEvent event);
 	void mouseDown(MouseEvent event);
 	void mouseDrag( MouseEvent event );
-    void mouseUp( MouseEvent event );
+	void mouseUp( MouseEvent event );
 	void keyDown( KeyEvent event );
 	void frameCurrentObject();
 	void update();
@@ -34,6 +35,7 @@ public:
 	float userIncr1;
 	float userIncr2;
 	float userIncr3;
+	float waterPrevTime;
 	
 	gl::Texture myImage;
 	gl::VboMesh mVbo;
@@ -59,10 +61,10 @@ public:
 	gl::GlslProg wellingtonShader;
 };
 
-void godComplexMACApp::prepareSettings(Settings *settings )
+void godComplexApp::prepareSettings(Settings *settings )
 {
-    settings->setWindowSize(1280, 720); //NOTE: DEBUG SIZE
-//    settings->setWindowSize(1920, 1080); //NOTE: OUTPUT SIZE TODO: FIX
+    //	settings->setWindowSize(1280, 720); //NOTE: DEBUG SIZE
+	settings->setWindowSize(1920, 1080); //NOTE: OUTPUT SIZE TODO: FIX
 	settings->setFrameRate(60.0);
 }
 
@@ -76,8 +78,9 @@ void godComplexMACApp::prepareSettings(Settings *settings )
  }
  */
 
-void godComplexMACApp::setup()
+void godComplexApp::setup()
 {
+	waterPrevTime = 0.0f;
 	drawWater = true;
 	drawMesh = true;
 	mDrawFlowField = true;
@@ -119,7 +122,7 @@ void godComplexMACApp::setup()
 	mFlowField->setup();
 	
 }
-void godComplexMACApp::mouseDown( MouseEvent event )
+void godComplexApp::mouseDown( MouseEvent event )
 {
 	/*
      if( event.isAltDown() )
@@ -133,10 +136,10 @@ void godComplexMACApp::mouseDown( MouseEvent event )
 	mWaterModule->mouseDown( event );
 }
 
-void godComplexMACApp::mouseUp( MouseEvent event ){
+void godComplexApp::mouseUp( MouseEvent event ){
 	mFlowField->mouseUp( event );
 }
-void godComplexMACApp::mouseDrag(MouseEvent event)
+void godComplexApp::mouseDrag(MouseEvent event)
 {
 	/*
      mouseMove(event);
@@ -152,7 +155,7 @@ void godComplexMACApp::mouseDrag(MouseEvent event)
 }
 
 
-void godComplexMACApp::frameCurrentObject()
+void godComplexApp::frameCurrentObject()
 {
 	Sphere boundingSphere = Sphere::calculateBoundingSphere( mMesh.getVertices() );
 	
@@ -160,7 +163,7 @@ void godComplexMACApp::frameCurrentObject()
 	
 }
 
-void godComplexMACApp::keyDown(KeyEvent event)
+void godComplexApp::keyDown(KeyEvent event)
 {
 	if(event.getChar() == 'p'){
 		userIncr1+= 1.0f;
@@ -202,25 +205,29 @@ void godComplexMACApp::keyDown(KeyEvent event)
 		drawMesh = !drawMesh;
 	}
 	
-	if(event.getChar() == 'f'){
+	if(event.getChar() == 'd'){
 		mDrawFlowField = !mDrawFlowField;
 		mFlowField->setDrawFlow(mDrawFlowField);
 	}
 	if(event.getChar() == 'z'){
 		mFlowField->invokePrintFlowField();
 	}
-    if(event.getChar() == 'f'){
-		mDrawFlowField = !mDrawFlowField;
-		mFlowField->setDrawFlow(mDrawFlowField);
+    
+	if(event.getChar() == 'f'){
+		setFullScreen(!isFullScreen());
 	}
 }
 
-void godComplexMACApp::update()
+void godComplexApp::update()
 {
+	if(timeline().getCurrentTime() > waterPrevTime + 5.0f  ){
+		mWaterModule->setMakeRipples();
+		waterPrevTime = timeline().getCurrentTime();
+	}
 	mFlowField->update();
 }
 
-void godComplexMACApp::draw()
+void godComplexApp::draw()
 {
 	
 	gl::enableDepthRead();
@@ -257,7 +264,7 @@ void godComplexMACApp::draw()
 		myImage.unbind();
 		gl::popMatrices();
     }
-    
+	
 	
 	gl::pushMatrices();
 	mFlowField->draw();
@@ -273,4 +280,4 @@ void godComplexMACApp::draw()
      */
 }
 
-CINDER_APP_NATIVE( godComplexMACApp, RendererGl )
+CINDER_APP_NATIVE( godComplexApp, RendererGl )

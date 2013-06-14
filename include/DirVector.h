@@ -6,11 +6,11 @@
 
 
 class DirVector{
-private: 
+private:
 	ci::Vec2f mLoc;
 	ci::Vec2f mDir;
 	ci::Vec2f mRotationVector;
-
+    
 public:
 	DirVector();
 	DirVector(ci::Vec2f, ci::Vec2f);
@@ -20,11 +20,11 @@ public:
 	ci::Vec2f getLocation();
 	ci::Vec2f getDirection();
 	ci::Vec2f getRotation();
-
-
+    
+    
 	float mRadius;
-
-
+    
+    
 };
 
 //#endif /* defined(__VectorFlowField__Particle__) */

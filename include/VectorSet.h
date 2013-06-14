@@ -18,16 +18,16 @@ public:
 	void removeParticles(int amt);
 	void printFlowLookUpTable();
 	DirVector*** createFlowField(int arraySizeX, int arraySizeY);
-
+    
 	ci::Vec2f flowLookUp(ci::Vec2f);
-
+    
 	list<DirVector*> mParticles;
-
-//    Vec2f mParticleLookUp[][];
+    
+    //    Vec2f mParticleLookUp[][];
 	
 	int mXRes, mYRes;
 	
 	DirVector*** mFlowLookUpTable;
-
+    
 };
 

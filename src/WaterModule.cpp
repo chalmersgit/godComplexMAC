@@ -8,10 +8,16 @@ using namespace ci;
 using namespace ci::app;
 using namespace std;
 
-const Vec2i kWindowSize = Vec2i(1280, 720);
+const Vec2i kWindowSize = Vec2i(1920, 1080);
 const Vec2f kPixel = Vec2f::one() / Vec2f(kWindowSize);
 
-WaterModule::WaterModule(){}
+WaterModule::WaterModule(){
+	makeRipples_bool = true;
+}
+
+void WaterModule::setMakeRipples(){
+	makeRipples_bool = true;
+}
 
 void WaterModule::mouseDown(MouseEvent event)
 {
@@ -60,7 +66,7 @@ void WaterModule::setup()
         console() << "Unable to compile refraction shader:\n" << ex.what() << "\n";
         return;
     }
-
+    
     //Load refraction texture
     {
         gl::Texture::Format format;
@@ -101,7 +107,7 @@ void WaterModule::drawFullScreenRect()
     Vec3f vert2((float)bounds.x1, (float)bounds.y2, 0.0f );
     Vec3f vert3((float)bounds.x2, (float)bounds.y2, 0.0f );
     
-
+    
     
     //Define quad texture coords
     Vec3f uv0(0.0f, 0.0f, 0.0f);
@@ -126,6 +132,13 @@ void WaterModule::drawFullScreenRect()
     
     //end drawing
     gl::end();
+}
+
+void WaterModule::makeRipples(){
+	gl::color(ColorAf(1.0f, 0.0f, 0.0f, 1.0f));
+    
+    gl::drawSolidCircle(Vec2f(300.0f, 300.0f), 20.0f, 12);
+    gl::color(Color::white());
 }
 
 void WaterModule::draw(float waterHeight)
@@ -172,13 +185,21 @@ void WaterModule::draw(float waterHeight)
     gl::disable(GL_TEXTURE_2D);
     
     //Draw mouse input into red channel
-    if(mMouseDown){
-        gl::color(ColorAf(1.0f, 0.0f, 0.0f, 1.0f));
-        
-        
-        gl::drawSolidCircle(Vec2f(mMouse), 10.0f, 32);      //TODO: this is where we have to implement the vector flow field
-        gl::color(Color::white());
-    }
+	/*
+     if(mMouseDown){
+     gl::color(ColorAf(1.0f, 0.0f, 0.0f, 1.0f));
+     
+     
+     gl::drawSolidCircle(Vec2f(mMouse), 20.0f, 12);      //TODO: this is where we have to implement the vector flow field
+     gl::color(Color::white());
+     }
+     */
+	if(makeRipples_bool){
+		makeRipples();
+		makeRipples_bool = false;
+	}
+    
+    
     glPopMatrix();
     //Stop drawing to FBO
     mFbo[pong].unbindFramebuffer();
@@ -215,10 +236,10 @@ void WaterModule::draw(float waterHeight)
         
         //fill the screen with the shader output
         
-//        gl::drawCube(Vec3f(0, 0, 0), Vec3f(841.0f, 1.0f, 600.0f));
-//        gl::drawSolidRect(getWindowBounds());
-//        gl::rotate(Vec3f(180.0, 0.0, 0.0));
-//        gl::enableWireframe();
+        //        gl::drawCube(Vec3f(0, 0, 0), Vec3f(841.0f, 1.0f, 600.0f));
+        //        gl::drawSolidRect(getWindowBounds());
+        //        gl::rotate(Vec3f(180.0, 0.0, 0.0));
+        //        gl::enableWireframe();
         drawFullScreenRect();
         
         
@@ -228,9 +249,9 @@ void WaterModule::draw(float waterHeight)
         mTexture.unbind();
         gl::disable(GL_TEXTURE_2D);
         mFbo[mFboIndex].unbindTexture();
-
+        
     }
-   
+    
 }
 
 

@@ -22,19 +22,21 @@ public:
 	void setDrawFlow(bool b);
 	void invokePrintFlowField();
 	void cloudControllerFollow();
-
+	void checkRespawn();
+    
 	void mouseDown(ci::app::MouseEvent event );
 	void mouseUp(ci::app::MouseEvent event );
 	void mouseDrag(ci::app::MouseEvent event );
-
+    
 	Channel32f mChannel;
 	gl::Texture mTexture;
 	
 	VectorSet* mParticleController;
 	
+	int numAliveControllers;
 	vector<CloudController*>* mCloudControllers;
 	//CloudController* mCloudController; //NOTE: leave commented out
-    CloudParticle* mCloudParticle;
+	CloudParticle* mCloudParticle;
 	
 	bool mDrawParticles;
 	bool mDrawImage;
@@ -45,4 +47,6 @@ public:
 	
 	float mTheta;
 	float mPrevTime;
+    
+	float mPrevTimeController;
 };

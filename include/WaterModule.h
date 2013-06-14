@@ -11,6 +11,8 @@ class WaterModule{
 public:
     WaterModule();
     void draw(float);
+	void makeRipples();
+	void setMakeRipples();
     void keyDown(ci::app::KeyEvent event);
     void mouseDown(ci::app::MouseEvent event);
     void mouseDrag(ci::app::MouseEvent event);
@@ -38,6 +40,9 @@ private:
     
     //True renders input to screen
     bool mShowInput;
+    
+	bool makeRipples_bool;
+	
 };
 
 

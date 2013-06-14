@@ -21,7 +21,7 @@
 #include "CloudController.h"
 #include "Resources.h"
 
-#include "CloudController.h"
+//#include "CloudController.h"
 
 //#include "LeapController.h"
 
@@ -32,8 +32,8 @@ using namespace std;
 #define HEIGHT 720 // Leap
 
 
-#define PARTICLES_X 512 //This should be sqrt(WIDTH * HEIGHT)
-#define PARTICLES_Y 512
+#define PARTICLES_X 1024 //This should be sqrt(WIDTH * HEIGHT)
+#define PARTICLES_Y 1024
 
 
 class CloudParticle {
@@ -46,11 +46,11 @@ public:
 	void draw();
 	void initFBO();
 	void setPos(ci::Vec2f);
-
+    
 	void mouseDown(ci::app::MouseEvent event );
 	void mouseUp(ci::app::MouseEvent event );
 	void mouseDrag(ci::app::MouseEvent event );
-
+    
 	bool mIsFullScreen;
 	
 	//Input
@@ -75,8 +75,8 @@ public:
 	gl::Texture mNoiseTex;
 	gl::Texture mSpriteTex;
     
-	ci::Vec2f		mLoc;					
-
+	ci::Vec2f		mLoc;
+    
 	int				mPos;
 	int				mVel;
 	int				mInfo;
@@ -93,12 +93,12 @@ public:
 	int minY;
 	int maxY;
     
-
+    
 	//Controller		mController;
 	//LeapController*	mLeapController;
     
     vector<CloudController*>* mCloudControllers;
-
+    
 	TriMesh			mMesh;
 };
 

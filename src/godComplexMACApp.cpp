@@ -63,8 +63,8 @@ public:
 
 void godComplexApp::prepareSettings(Settings *settings )
 {
-    //	settings->setWindowSize(1280, 720); //NOTE: DEBUG SIZE
-	settings->setWindowSize(1920, 1080); //NOTE: OUTPUT SIZE TODO: FIX
+    settings->setWindowSize(1280, 720); //NOTE: DEBUG SIZE
+//      settings->setWindowSize(1920, 1080); //NOTE: OUTPUT SIZE TODO: FIX
 	settings->setFrameRate(60.0);
 }
 

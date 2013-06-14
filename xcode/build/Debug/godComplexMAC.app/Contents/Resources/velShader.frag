@@ -20,10 +20,18 @@ uniform vec2 finger3;
 uniform vec2 finger4;
 uniform vec2 finger5;
 
+/*
 uniform int maxControllers;
 uniform vec2[16] controllers;
 uniform float[16] controllerMinIndices;
 uniform float[16] controllerMaxIndices;
+*/
+
+uniform int maxControllers;
+uniform vec2 controllers[16];
+uniform float controllerMinIndices[16];
+uniform float controllerMaxIndices[16];
+
 
 uniform vec2 controller1;
 uniform vec2 controller2;
@@ -107,7 +115,7 @@ void main(){
 	//Shape particles
 	for(int i = 0; i < maxControllers; i++){
 		float maxValue = controllerMaxIndices[i];
-		if(maxValue >= 1){maxValue = 2;}
+		if(maxValue >= 1.0){maxValue = 2.0;}
 		if(origPos.x >= controllerMinIndices[i] && origPos.x < maxValue){
 			//pos.x = controllerMaxIndices[i] - origPos.x + controllers[i].x;
 			//pos.y = origPos.y + controllers[i].y;
@@ -262,8 +270,7 @@ void main(){
 	
 	
     
-	
-	//position + mass
+		//position + mass
 	gl_FragData[0] = vec4(pos, mass);
     
 	//velocity + decay
@@ -272,42 +279,3 @@ void main(){
 	//age information
 	gl_FragData[2] = vec4(age, maxAge, 0.0, 1.0);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
- if(origPos.x < 0.5 && origPos.y < 0.5){
- //Squares the particles
- pos.x =  (0.25) - origPos.x + controller1.x;
- pos.y = (0.25) - origPos.y + controller1.y;
- 
- 
- //Add variation
- float thresh = 0.65;
- vec2 dirVal = vec2(pos.x - controller1.x, pos.y - controller1.y);
- float distSqrd = length(dirVal) * length(dirVal);
- float percent = distSqrd/0.25;
- float threshDelta = 1.0 - thresh; 
- float adjustedPercent = ( percent - thresh )/threshDelta;
- float F = ( 1.0 - ( cos( adjustedPercent * M_PI*2.0) * -0.5 + 0.5 ) ) * 0.04;
- dirVal = normalize(dirVal) * F;
- pos.x += dirVal.x;
- pos.y += dirVal.y;
- }*/

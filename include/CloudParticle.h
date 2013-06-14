@@ -32,8 +32,8 @@ using namespace std;
 #define HEIGHT 720 // Leap
 
 
-#define PARTICLES_X 1024 //This should be sqrt(WIDTH * HEIGHT)
-#define PARTICLES_Y 1024
+#define PARTICLES_X 512 //This should be sqrt(WIDTH * HEIGHT)
+#define PARTICLES_Y 512
 
 
 class CloudParticle {
